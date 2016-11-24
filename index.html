@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, width=device-width">
+	<meta name="screen-orientation" content="portrait">
+    <title>智能消费电子产业高峰论坛邀您来吃月饼</title> 
+    <link rel="stylesheet" type="text/css" href="static/css/index.css">
+    <script src="http://s0.qhimg.com/!249ce048/WeixinApi.js" type="text/javascript" charset="utf-8" ></script>
+    <script src="static/js/zepto.min.js"></script>
+
+</head>
+<body>
+<img src='http://www.pieeco.com/zt/zqgame/static/img/fenxiang.png' atl="缩略图" width="0" style="font-size:0px;line-height:0px;position:absolute;"/>
+
+<div id="container main">
+	<div id="guidePanel"></div>
+	<div id="gamepanel">
+		<div class="score-wrap">
+            <div class="heart"></div>
+            <span id="score">0</span>
+        </div>
+		<canvas id="stage" width="320" height="568"></canvas>
+     <div id='mis_cont' class='circ'>
+        <audio id="Jaudio" class="media-audio" src="mario.mp3" preload loop="loop"></audio >
+     </div>
+
+	</div>
+	<div id="gameoverPanel"></div>
+	<div id="resultPanel">
+        <div class="weixin-share"></div>
+        <a href="javascript:void(0)" class="replay"></a>
+        <div id="fenghao"></div>
+        <div id="scorecontent">
+        	您在<span id="stime" class="lighttext">2378</span>秒内抢到了<span id="sscore" class="lighttext">21341</span>个月饼<br>超过了<span id="suser" class="lighttext">31%</span>的用户！
+        </div>
+        <div class="textc">
+        	 <span class="btn1 share">请小伙伴吃月饼</span>
+             <a class="ss" href="http://www.huodongxing.com/event/9343642377800">9.22消费电子论坛报名</a>
+        </div>
+	</div>
+  
+   
+</div>
+
+<script src="static/js/index.js"></script>
+<script>
+   function audioAutoPlay(id){
+    var audio = document.getElementById(id);
+    audio.play();
+    document.addEventListener("WeixinJSBridgeReady", function () {
+            audio.play();
+    }, false);
+}
+audioAutoPlay('Jaudio');
+
+var audcont=document.getElementById('mis_cont');
+var myAudio = document.getElementById('Jaudio');
+audcont.onclick=function(){
+      if(myAudio.paused){
+            myAudio.play();
+      
+
+        }else{
+            myAudio.pause();
+             
+
+        }
+
+        if(audcont.className=='circ'){
+            audcont.className=''
+        }else{
+            audcont.className='circ';
+        }
+
+
+}
+
+
+
+   
+    
+
+
+</script>
+
+
+
+</body>
+</html>
